@@ -7,7 +7,8 @@ export default function Tablero(props) {
         return( 
             fila.map((casilla, indexCasilla) => {
                 return (
-                    <Casilla key={`${indexFila}-${indexCasilla}`} valor={casilla} />
+                    <Casilla key={`${indexFila}-${indexCasilla}`} valor={casilla} click={props.casillaclick} 
+                    fila={indexFila} columna={indexCasilla} />
                 )
             })
       )})}
