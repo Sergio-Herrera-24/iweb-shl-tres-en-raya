@@ -9,3 +9,5 @@ Paso 3: Ya está hecho en el paso 2 el componente de Casilla.
 
 Paso 4: Ahora vamos a crear la función encargada de manejar los clicks y como en JavaScript las funciones son objetos la podemos pasar como props para que así el flujo de eventos sea hacia arriba hasta App donde ya se ejecuta la lógica de la aplicación y donde se cambia el estado y por lo tanto se repinta si es necesario.
 `let tableroCambiado = JSON.parse(JSON.stringify(tablero))`. Crea una copia del tablero para cambiar solo la casilla antes de actualizar el estado con setTablero().
+
+Paso 5: Ahora vamos a añadir un contador de movimientos debajo del tablero y para ello necesitamos otro estado ya que queremos que este se repinte cada vez que se ejecuta un click nuevo en una casilla permitida. También vamos a crear un botón RESET que mande el juego al estado inicial. (La parte de evitar que se pueda hacer click sobre una casilla que ya se había hecho click está hecha desde el paso 4)

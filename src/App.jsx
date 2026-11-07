@@ -10,6 +10,7 @@ function App() {
     ['-', '-', '-'],
     ['-', '-', '-']
   ])
+  const [contador, setContador] = useState(0)
 
   function manejarClick(fila, columna){
     console.log(`CLICK en la casilla [${fila}][${columna}]`)
@@ -21,13 +22,24 @@ function App() {
       tableroCambiado[fila][columna] = 'O'
       setTablero(tableroCambiado)
       setTurno("PLAYERX")
+      setContador(contador=>contador+1)
       return
     }
     let tableroCambiado = JSON.parse(JSON.stringify(tablero))
     tableroCambiado[fila][columna] = 'X'
     setTablero(tableroCambiado)
     setTurno("PLAYER0")
+    setContador(contador=>contador+1)
     return
+  }
+
+  function resetJuego(){
+    setTablero([
+      ['-', '-', '-'],
+      ['-', '-', '-'],
+      ['-', '-', '-']
+    ])
+    setContador(0)  
   }
 
   return (
@@ -35,6 +47,8 @@ function App() {
       <h1 id="titulo">TicTacToe Interactivo de Sergio</h1>
       <Header jugador={turno} />
       <Tablero valores={tablero} casillaclick={manejarClick} />
+      <h3 id="contador">Número de movimientos: {contador}</h3>
+      <button id="reset" onClick={() => resetJuego()}>Reset</button>
     </div>
   )
 }
