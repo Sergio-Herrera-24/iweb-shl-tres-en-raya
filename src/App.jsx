@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header'
 import Tablero from './Tablero'
+import Button from 'react-bootstrap/Button';
 
 function App() {
 
@@ -70,7 +72,7 @@ function App() {
           <Header jugador={turno} />
           <Tablero valores={tablero} casillaclick={manejarClick} />
           <h3 id="contador">Número de movimientos: {contador}</h3>
-          <button id="reset" onClick={() => resetJuego()}>Reset</button>
+          <Button id="reset" onClick={() => resetJuego()}>Reset</Button>
         </>
       : null}
     </div>  

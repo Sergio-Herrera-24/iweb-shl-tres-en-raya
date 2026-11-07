@@ -13,3 +13,5 @@ Paso 4: Ahora vamos a crear la función encargada de manejar los clicks y como e
 Paso 5: Ahora vamos a añadir un contador de movimientos debajo del tablero y para ello necesitamos otro estado ya que queremos que este se repinte cada vez que se ejecuta un click nuevo en una casilla permitida. También vamos a crear un botón RESET que mande el juego al estado inicial. (La parte de evitar que se pueda hacer click sobre una casilla que ya se había hecho click está hecha desde el paso 4)
 
 Paso 6: Ahora vamos a cargar desde el principio una pratida que etsá en un servidor y para ello vamos a usar un useEffect y fetch para traernos los datos. Para que el useEffect solo se cargue al principio y no cada vez que hay que repintar hay que ponerlo con los corchetes `useEffect(() => {...}, [])`
+
+Paso 7: Aplicamos un css para mejorar el aspecto visual de la página. (En react-bootstrap encontramos componentes que nos ayudan a hacer la página más bonita y visual)

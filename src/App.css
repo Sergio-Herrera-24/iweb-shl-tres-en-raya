@@ -1,66 +1,146 @@
-/* Centrar toda la aplicación en la pantalla */
-#App {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 400px;
-  margin: 40px auto;
-  text-align: center;
-  background-color: #1e1e24;
-  color: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+/* ==========================================================================
+   ESTILOS DEL TRES EN RAYA DE SERGIO
+   ========================================================================== */
+html, body, #root {
+  background-color: #0f1715 !important; /* Mantiene el fondo oscuro verdoso en toda la web */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh; /* Obliga a ocupar el 100% de la altura de la ventana del navegador */
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;     /* Centrado vertical */
 }
 
+#App {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  background: linear-gradient(145deg, #14241f, #1a3029); /* Degradado verdoso profundo */
+  color: #e0f2f1;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 
+              0 0 20px rgba(46, 204, 113, 0.15); /* Brillo verde sutil */
+  border: 1px solid #2e4d41;
+}
+
+/* Título de Sergio */
 #titulo {
   margin-top: 0;
-  color: #4fc3f7;
+  margin-bottom: 20px;
+  color: #2ecc71; /* Verde neón */
   font-size: 1.8rem;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(46, 204, 113, 0.3);
 }
 
-/* Estilos para el Header del turno */
-header, h2 {
-  font-size: 1.2rem;
-  color: #a5d6a7;
+/* Texto de carga */
+#cargando {
+  color: #a3e635;
+  font-size: 1.4rem;
+  padding: 40px 0;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+#header {
   margin-bottom: 25px;
 }
 
-/* 🟦 EL TABLERO: Cuadrícula perfecta de 3x3 */
-#tablero {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-  gap: 10px; /* Separación entre casillas */
-  background-color: #333533;
-  padding: 10px;
+#cabecera {
+  background-color: #1c3d31;
+  color: #a7f3d0; 
+  padding: 10px 16px;
   border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid #346351;
 }
 
-/* 🔲 LAS CASILLAS Y SUS BOTONES */
+/* ==========================================================================
+   TABLERO
+   ========================================================================== */
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  background-color: #0b1311;
+  padding: 16px;
+  border-radius: 18px;
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   CASILLAS Y BOTONES
+   ========================================================================== */
 #casilla {
   display: flex;
-  aspect-ratio: 1; /* Hace que las casillas sean perfectamente cuadradas */
+  aspect-ratio: 1;
 }
 
 #casillapulsador {
   width: 100%;
   height: 100%;
-  background-color: #2b2d42;
-  color: #fff;
-  border: 2px solid #45496a;
-  border-radius: 8px;
-  font-size: 2rem;
+  background-color: #192e26;
+  color: #55efc4;
+  border: 2px solid #2d4f42;
+  border-radius: 14px;
+  font-size: 2.2rem;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Efecto al pasar el ratón por encima */
 #casillapulsador:hover {
-  background-color: #3d405b;
-  border-color: #4fc3f7;
-  transform: scale(1.02);
+  background-color: #223f34;
+  border-color: #2ecc71;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(46, 204, 113, 0.2);
 }
 
-/* Efecto al hacer clic */
 #casillapulsador:active {
-  transform: scale(0.96);
+  transform: translateY(1px);
 }
+
+/* ==========================================================================
+   ESTILOS COMPONENTES BOOTSTRAP ADAPTADOS
+   ========================================================================== */
+
+/* El componente Alert del contador */
+#contador {
+  background-color: #0b1311 !important;
+  border: 1px solid #2d4f42 !important;
+  color: #94a3b8 !important;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  padding: 10px !important;
+}
+
+#contador strong {
+  color: #2ecc71;
+}
+
+/* El componente Button del reset */
+#reset {
+  background-color: #2ecc71 !important;
+  color: #050b09 !important;
+  border: none !important;
+  padding: 10px 30px !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3) !important;
+}
+
+#reset:hover {
+  background-color: #27ae60 !important;
+  transform: scale(1.02) !important;
+}
+
